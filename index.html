@@ -1,53 +1,398 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kishori Collection</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kishori Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#f8f9ff,#eef5ff);
+color:#333;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(90deg,#6a11cb,#2575fc);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,0.1);
+}
+
+header h1{
+color:white;
+font-size:2rem;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffe082;
+}
+
+/* OFFER BAR */
+
+.offer-bar{
+background:#ff9800;
+color:white;
+text-align:center;
+padding:10px;
+font-weight:bold;
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+50%{opacity:0.8;}
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:100px 20px;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('images/banner.jpg');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#ff5722;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+background:#e64a19;
+}
+
+/* STATS */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:50px 20px;
+background:white;
+flex-wrap:wrap;
+}
+
+.stat-box{
+text-align:center;
+}
+
+.stat-box h3{
+font-size:2rem;
+color:#2575fc;
+}
+
+.stat-box p{
+font-weight:600;
+}
+
+/* FEATURED */
+
+.featured{
+padding:70px 8%;
+}
+
+.featured h2{
+text-align:center;
+margin-bottom:40px;
+font-size:2.5rem;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+position:relative;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:red;
+color:white;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+}
+
+.product-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.product-card h3{
+padding:15px;
+}
+
+.product-card p{
+padding:0 15px 15px;
+font-size:1.2rem;
+font-weight:bold;
+color:#2575fc;
+}
+
+.product-card .btn{
+margin:15px;
+display:block;
+text-align:center;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+padding:70px 8%;
+background:#f5f7ff;
+}
+
+.testimonials h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.review{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+padding:70px 20px;
+text-align:center;
+background:linear-gradient(90deg,#6a11cb,#2575fc);
+color:white;
+}
+
+.newsletter input{
+padding:15px;
+width:300px;
+max-width:90%;
+border:none;
+border-radius:30px;
+margin-top:15px;
+}
+
+.newsletter button{
+padding:15px 25px;
+border:none;
+background:#ff9800;
+color:white;
+border-radius:30px;
+cursor:pointer;
+margin-left:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+footer a{
+color:#ddd;
+margin:0 10px;
+text-decoration:none;
+}
+
+footer a:hover{
+color:#ff9800;
+}
+
+/* FLOATING BUTTON */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+</style>
 </head>
+
 <body>
 
+<div class="offer-bar">
+🔥 Limited Time Offer: FREE Shipping on Orders Above ₹999
+</div>
+
 <header>
-    <h1>Kishori Collection</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<h1>Kishori Collection</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
-    <h2>Premium Print-On-Demand Apparel</h2>
-    <p>Unique T-Shirts, Mugs & Posters</p>
-    <a href="shop.html" class="btn">Shop Now</a>
+<h2>Wear Your Inspiration</h2>
+<p>Premium Oversized Tees, Mugs & Wall Art for Dreamers</p>
+
+<a href="shop.html" class="btn">
+Shop Collection
+</a>
+</section>
+
+<section class="stats">
+
+<div class="stat-box">
+<h3>500+</h3>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat-box">
+<h3>100+</h3>
+<p>Unique Designs</p>
+</div>
+
+<div class="stat-box">
+<h3>4.9★</h3>
+<p>Customer Rating</p>
+</div>
+
 </section>
 
 <section class="featured">
-    <h2>Featured Products</h2>
 
-    <div class="product-grid">
+<h2>Trending Products</h2>
 
-        <div class="product-card">
-            <img src="images/tshirt1.jpg">
-            <h3>Motivational Oversized Tee</h3>
-            <p>₹799</p>
-            <a href="shop.html" class="btn">View Product</a>
-        </div>
+<div class="product-grid">
 
-        <div class="product-card">
-            <img src="images/mug1.jpg">
-            <h3>Motivational Mug</h3>
-            <p>₹349</p>
-            <a href="shop.html" class="btn">View Product</a>
-        </div>
+<div class="product-card">
+<div class="badge">BESTSELLER</div>
+<img src="images/tshirt1.jpg">
+<h3>Motivational Oversized Tee</h3>
+<p>₹799</p>
+<a href="shop.html" class="btn">View Product</a>
+</div>
 
-    </div>
+<div class="product-card">
+<div class="badge">HOT</div>
+<img src="images/mug1.jpg">
+<h3>Success Mindset Mug</h3>
+<p>₹349</p>
+<a href="shop.html" class="btn">View Product</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="testimonials">
+
+<h2>What Customers Say</h2>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+"Excellent quality and fast delivery!"
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+"Love the oversized fit. Will order again."
+</div>
+
+</section>
+
+<section class="newsletter">
+
+<h2>Get Exclusive Offers</h2>
+
+<p>Subscribe and receive special discounts.</p>
+
+<input type="email" placeholder="Enter your email">
+<button>Subscribe</button>
+
 </section>
 
 <footer>
-    <a href="shipping-policy.html">Shipping Policy</a>
-    <a href="return-policy.html">Return Policy</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
+
+<a href="shipping-policy.html">Shipping Policy</a>
+<a href="return-policy.html">Return Policy</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+
+<p style="margin-top:20px;">
+© 2026 Kishori Collection. All Rights Reserved.
+</p>
+
 </footer>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">
+WhatsApp Us
+</a>
 
 </body>
 </html>
